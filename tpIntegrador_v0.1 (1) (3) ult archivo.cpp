@@ -13,26 +13,40 @@ srand(time(0));
 int dado[6];int time; int x; int y; int puntajeJuego = 0;
 
 //variables de usuarios//
-string jugadorA;
+string nombre;
+int edad;
 
-//Variable de contador de rondas//
+//Variable de contador de rondas y tiradas//
  int conrondas = 0;
 
 //--------------------------------------------------------------------//
 
-//Solicitud del nombre de usuario//
-cout << "Ingrese el nombre del jugador: ";
-cin >> jugadorA;
-cout << "Bienvenido " << jugadorA << "." << endl;
+//Solicitud de datos del usuario//
+cout << "Ingrese su edad ";
+cin >> edad;
+
+cout << "Ingrese su nombre ";
+cin.ignore();
+getline(cin, nombre);
+
+cout << "Nombre: " << nombre << " tiene " << edad << " anos de edad " << endl;
+
+
+//system("pause");
+//system("cls");
+
+cout << "Bienvenido " << nombre << endl;
+cout << endl;
 
 system("pause");
 system("cls");
+
 //--------------------------------------------------------------------//
+
 while(puntajeJuego < 100){
 
 //variables de tirada//
 int tiradaA = 0; int tiradaB = 0; int tiradaC = 0; int puntajeRonda = 0;
-
 
 //-------------------------------------------------------------------/
 
@@ -41,11 +55,15 @@ conrondas++;
 cout << "Ronda Nº: " << conrondas << endl;
 cout << endl;
 
+cout << "Tirada Nº 1 " << endl;
+cout << endl;
+
 //tirada 1//
 for(x=0; x<6; x++){
     dado[x] = tirada();
 }
 
+//mostrar tirada 1//
 for(y=0; y<6; y++){
     cout << dado[y] << endl;
     tiradaA += dado[y];
@@ -75,13 +93,15 @@ system("pause");
 
 //////////////////////////////////////////////////////////////////////////////////
 
-
-
+cout << "Tirada Nº 2 " << endl;
+cout << endl;
 
 //tirada 2//
 for(x=0; x<6; x++){
     dado[x] = tirada();
 }
+
+//mostrar tirada 2//
 for(y=0; y<6; y++){
     cout << dado[y] << endl;
     tiradaB += dado[y];
@@ -107,13 +127,15 @@ system("pause");
 
 //////////////////////////////////////////////////////////////////////////////////
 
-
-
+cout << "Tirada Nº 3 " << endl;
+cout << endl;
 
 //tirada 3//
 for(x=0; x<6; x++){
     dado[x] = tirada();
 }
+
+//mostrar tirada 3//
 for(y=0; y<6; y++){
     cout << dado[y] << endl;
     tiradaC += dado[y];
